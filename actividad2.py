@@ -78,7 +78,7 @@ class Empleado(Persona):
         input("Presiones cualquier tecla")
 
 def clear():
-    os.system("cls")
+    os.system("clear")
 
 def menu():
     objP = Persona()
