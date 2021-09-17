@@ -35,6 +35,7 @@ class Persona():
         self.item = self.DicPersona.items()
         for co, per in self.item:
             print(co,per)
+        input("Presiones cualquier tecla")
 
 class Empleado(Persona):
     """ Constructor de la clase empleado"""
@@ -74,52 +75,51 @@ class Empleado(Persona):
         self.item = self.DicEmpleado.items()
         for co, per in self.item:
             print(co,per)
-    
+        input("Presiones cualquier tecla")
 
-    import os
+def clear():
+    os.system("cls")
 
 def menu():
-    os.system('clear')
-    print ("Agregar persona")
-    print ("Eliminar persona")
-    print ("Mostrar persona")
-    print ("Agregar empleado")
-    print ("Eliminar empleado")
-    print ("Mostrar empleado")
-    print ("Salir")
-
-while True: 
-  
-    menu()
-    opcionMenu = input("¿adonde desea ir? ==> ")
-
-    if opcionMenu =='1': 
-      print ("agregar") 
-    if opcionMenu == '2': 
-      print ("eliminar")
-    if opcionMenu == '3':
-      print ("mostrar") 
-    if opcionMenu == '3':
-      print ("agregar")  
-    if opcionMenu == '3':
-      print ("eliminar") 
-    if opcionMenu == '3':
-      print ("mosntrar")      
-    if opcionMenu == '7': 
-      break
-    else: 
-      print ("Opcion invalida")
-  
-
-def main():
     objP = Persona()
     objE = Empleado()
+    salida = 1
+    while salida != 7 and salida>0:
+        print("    Menu")
+        print("1. Agregar persona.")
+        print("2. Eliminar persona.")
+        print("3. Mostrar persona.")
+        print("4. Agregar empleado.")
+        print("5. Eliminar empleado.")
+        print("6. Mostrar empleado.")
+        print("7. Salir")
+        salida=int(input(": "))
+        if salida == 1:
+            clear()
+            objP.agregar()
+        elif salida == 2:
+            clear()
+            objP.eliminar()
+        elif salida == 3:
+           clear()
+           objP.mostrar()
+        elif salida == 4:
+           clear()
+           objE.agregar()
+        elif salida == 5:
+           clear()
+           objE.eliminar()
+        elif salida == 6:
+           clear()
+           objE.mostrar()
+        elif salida == 7:
+           break
+        else:
+            continue
 
 
-    objE.agregar()
-    objE.mostrar()
-      
-
+def main():
+   menu() 
 
 if __name__ == "__main__":
     main()    
